@@ -54,9 +54,12 @@ class TracksViewController: UIViewController, UITableViewDataSource {
                 let tracks = response.results
                 print("✅ \(tracks)")
 
-                // Update the tracks property on the main thread
+                // Execute UI updates on the main thread when calling from a background callback
                 DispatchQueue.main.async {
+                    // Set the view controller's tracks property as this is the one the table view references
                     self?.tracks = tracks
+
+                    // Make the table view reload now that we have new data
                     self?.tableView.reloadData()
                 }
             } catch {
@@ -66,6 +69,7 @@ class TracksViewController: UIViewController, UITableViewDataSource {
 
         // Initiate the network request
         task.resume()
+        print("👋 Below the closure")
         
         // Set the table view data source here
         tableView.dataSource = self
