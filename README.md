@@ -2,8 +2,6 @@
 
 Tunley is an iOS app that allows users to browse and explore music tracks from the iTunes API. Users can view real track data, switch between different views using a UITabBarController, and browse album covers using a UICollectionView.
 
-<img width="379" alt="Screenshot 2023-09-17 at 11 38 24 PM" src="https://github.com/CruzIsaiah/Tunley/assets/137027699/a039c66b-d60a-4f8d-9d49-6cf3e950336f">
-
 ## Table of Contents
 
 - [Description](#description)
