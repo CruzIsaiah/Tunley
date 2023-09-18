@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -259,6 +260,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="5Ft-pn-E9I" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jv1-Rm-gSU">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -274,18 +276,64 @@
         <!--Albums-->
         <scene sceneID="Ivj-Ms-Bnu">
             <objects>
-                <viewController id="hVi-2G-NMv" sceneMemberID="viewController">
+                <viewController id="hVi-2G-NMv" customClass="AlbumsViewController" customModule="lab_tunley" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PwK-Eq-J5e">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zbz-xy-H29">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eXA-fF-gjk">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumCell" id="2Ha-5I-F8D" customClass="AlbumCell" customModule="lab_tunley" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mFB-mV-b69" customClass="AlbumCell" customModule="lab_tunley" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sd2-OR-W0N">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Sd2-OR-W0N" secondAttribute="trailing" id="Bet-VM-LbD"/>
+                                                <constraint firstItem="Sd2-OR-W0N" firstAttribute="top" secondItem="mFB-mV-b69" secondAttribute="top" id="e6V-0f-y1T"/>
+                                                <constraint firstItem="Sd2-OR-W0N" firstAttribute="leading" secondItem="mFB-mV-b69" secondAttribute="leading" id="uAf-mQ-CCA"/>
+                                                <constraint firstAttribute="bottom" secondItem="Sd2-OR-W0N" secondAttribute="bottom" id="vZi-nI-mnf"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="AlbumImageView" destination="mFB-mV-b69" id="Lyv-HA-iPi"/>
+                                            <outlet property="albumImageView" destination="Sd2-OR-W0N" id="fMI-ka-rHh"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ZJg-jd-bfG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZJg-jd-bfG" firstAttribute="trailing" secondItem="Zbz-xy-H29" secondAttribute="trailing" id="FBe-JN-YWf"/>
+                            <constraint firstItem="Zbz-xy-H29" firstAttribute="top" secondItem="ZJg-jd-bfG" secondAttribute="top" id="UDX-Nq-SPq"/>
+                            <constraint firstItem="ZJg-jd-bfG" firstAttribute="bottom" secondItem="Zbz-xy-H29" secondAttribute="bottom" id="Vx1-b3-6z1"/>
+                            <constraint firstItem="Zbz-xy-H29" firstAttribute="leading" secondItem="ZJg-jd-bfG" secondAttribute="leading" id="eto-Pd-lBR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Albums" id="G2L-Og-RAT"/>
+                    <connections>
+                        <outlet property="CollectionView" destination="Zbz-xy-H29" id="jQO-Ek-JCe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2GV-ET-Kxr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1107.6335877862596" y="731.69014084507046"/>
+            <point key="canvasLocation" x="1122.9007633587785" y="731.69014084507046"/>
         </scene>
         <!--Albums-->
         <scene sceneID="dsn-Lo-AZi">
@@ -304,7 +352,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ac-ea-ZnD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="180.91603053435114" y="731.69014084507046"/>
+            <point key="canvasLocation" x="201" y="732"/>
         </scene>
     </scenes>
     <resources>

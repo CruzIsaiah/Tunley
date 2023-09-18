@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19362FE12AB7F06800E4D748 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19362FE02AB7F06800E4D748 /* AlbumsViewController.swift */; };
+		19362FE32AB7F21F00E4D748 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19362FE22AB7F21F00E4D748 /* Album.swift */; };
+		19362FE52AB7F3D400E4D748 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19362FE42AB7F3D400E4D748 /* AlbumCell.swift */; };
 		CB7254DF2939D37800F531FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7254DE2939D37800F531FB /* AppDelegate.swift */; };
 		CB7254E12939D37800F531FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7254E02939D37800F531FB /* SceneDelegate.swift */; };
 		CB7254E32939D37800F531FB /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7254E22939D37800F531FB /* TracksViewController.swift */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19362FE02AB7F06800E4D748 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		19362FE22AB7F21F00E4D748 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		19362FE42AB7F3D400E4D748 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		CB7254DB2939D37800F531FB /* lab-tunley.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lab-tunley.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7254DE2939D37800F531FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB7254E02939D37800F531FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,8 +72,10 @@
 			children = (
 				CB7254F7293B224F00F531FB /* Models */,
 				CB7254F8293B58DA00F531FB /* TrackCell.swift */,
+				19362FE42AB7F3D400E4D748 /* AlbumCell.swift */,
 				CB7254E22939D37800F531FB /* TracksViewController.swift */,
 				CB8B1546293EFCA100397B69 /* DetailViewController.swift */,
+				19362FE02AB7F06800E4D748 /* AlbumsViewController.swift */,
 				CB7254DE2939D37800F531FB /* AppDelegate.swift */,
 				CB7254E02939D37800F531FB /* SceneDelegate.swift */,
 				CB7254E42939D37800F531FB /* Main.storyboard */,
@@ -82,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				CB7254F5293B224000F531FB /* Track.swift */,
+				19362FE22AB7F21F00E4D748 /* Album.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,12 +172,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19362FE12AB7F06800E4D748 /* AlbumsViewController.swift in Sources */,
 				CB7254F9293B58DA00F531FB /* TrackCell.swift in Sources */,
 				CB7254E32939D37800F531FB /* TracksViewController.swift in Sources */,
 				CB7254DF2939D37800F531FB /* AppDelegate.swift in Sources */,
 				CB8B1547293EFCA100397B69 /* DetailViewController.swift in Sources */,
 				CB7254E12939D37800F531FB /* SceneDelegate.swift in Sources */,
 				CB7254F6293B224000F531FB /* Track.swift in Sources */,
+				19362FE32AB7F21F00E4D748 /* Album.swift in Sources */,
+				19362FE52AB7F3D400E4D748 /* AlbumCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
